@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import static java.lang.IO.println;
 
 public class Azienda {
-    ArrayList<Dipendente> dipendenti;
+    public ArrayList<Dipendente> dipendenti;
 
     public Azienda() {
         dipendenti = new ArrayList<>();

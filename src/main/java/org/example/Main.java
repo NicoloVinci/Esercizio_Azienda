@@ -1,17 +1,18 @@
-package org.example;
+import org.example.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+void main() {
+    Impiegato i = new Impiegato("Giacomo", 1800.00);
+    Manager m = new Manager("Nicolò", 1800.00);
+    Stagista s = new Stagista("Giovanni", 1800.00);
+    Venditore v = new Venditore("Tommaso", 1800.00, 400, 40);
+    Azienda a = new Azienda();
+    a.aggiungi(i);
+    a.aggiungi(m);
+    a.aggiungi(s);
+    a.aggiungi(v);
+    for(Dipendente d : a.dipendenti) {
+        d.calcolaStipendio();
+        d.descrizione();
+        d.toString();
     }
 }
