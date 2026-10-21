@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import static java.lang.IO.println;
 
 public class Azienda {
-    public ArrayList<Dipendente> dipendenti;
+    private ArrayList<Dipendente> dipendenti;
+
+    public ArrayList<Dipendente> getDipendenteList() {
+        return dipendenti;
+    }
 
     public Azienda() {
         dipendenti = new ArrayList<>();
@@ -25,11 +29,14 @@ public class Azienda {
 
     public void stampaTutti() {
         for (Dipendente d : dipendenti) {
-            println(d.descrizione());
+            println(d);
         }
     }
 
     public Dipendente piuPagato() {
+        if(dipendenti.isEmpty()){
+            return null;
+        }
         Dipendente d = dipendenti.get(0);
         for (Dipendente dp : dipendenti) {
             if(d.calcolaStipendio() <= dp.calcolaStipendio()) {

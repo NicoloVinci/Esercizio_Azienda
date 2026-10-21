@@ -17,6 +17,6 @@ public abstract class Dipendente {
 
     @Override
     public String toString() {
-        return "Descrizione: " + descrizione() + " - Stipendio: " + calcolaStipendio();
+        return descrizione() + " - stipendio: " + calcolaStipendio();
     }
 }
